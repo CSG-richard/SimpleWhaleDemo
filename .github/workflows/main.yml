@@ -1,17 +1,17 @@
-# name: CI to Docker Hub 
+name: CI to Docker Hub 
 
-# on:
-#   push:
-#     branches: main
+on:
+  push:
+    branches: main
     
-# jobs:
+jobs:
 
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - 
-#         name: Checkout
-#         uses: actions/checkout@v2
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v2
 #       -       
 #         name: Set up Docker Buildx
 #         id: buildx
