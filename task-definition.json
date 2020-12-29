@@ -1,10 +1,11 @@
 {
     "containerDefinitions": [
         {
-            "name": "SimpleWhaleDemo-container",
-            "image": "230055526375.dkr.ecr.us-east-2.amazonaws.com/test1:436915ffaf15f452bdb35669899cc26854b67aff",
-            "cpu": 512,
-            "memoryReservation": 128,
+            "name": "SWD-container",
+            "image": "230055526375.dkr.ecr.us-east-2.amazonaws.com/test1",
+            "cpu": 0,
+            "memory": 300,
+            "memoryReservation": 250,
             "portMappings": [
                 {
                     "containerPort": 80,
@@ -18,10 +19,10 @@
             "volumesFrom": []
         }
     ],
-    "family": "SimpleWhaleDemo-task",
+    "family": "SWD-task",
     "executionRoleArn": "arn:aws:iam::230055526375:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
     "volumes": [],
     "cpu": "512",
-    "memory": "512"
+    "memory": "300"
 }
