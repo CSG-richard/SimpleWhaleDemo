@@ -1,14 +1,15 @@
 {
     "containerDefinitions": [
         {
-            "name": "simplewhalecontainer",
-            "image": "230055526375.dkr.ecr.us-east-2.amazonaws.com/test1:bff76b387d9349a0d150db78fd3b6d8f9d6e889c",
-            "cpu": 0,
-            "memoryReservation": 128,
+            "name": "SimpleWhaleDemo-container",
+            "image": "230055526375.dkr.ecr.us-east-2.amazonaws.com/test1",
+            "cpu": 512,
+            "memory": 512,
+            "memoryReservation": 512,
             "portMappings": [
                 {
                     "containerPort": 80,
-                    "hostPort": 80,
+                    "hostPort": 0,
                     "protocol": "tcp"
                 }
             ],
@@ -18,8 +19,29 @@
             "volumesFrom": []
         }
     ],
-    "family": "simplewhaledemo-task",
-    "taskRoleArn": "arn:aws:iam::230055526375:role/ecsTaskExecutionRole",
+    "family": "SimpleWhaleDemo-task",
     "executionRoleArn": "arn:aws:iam::230055526375:role/ecsTaskExecutionRole",
-    "networkMode": "bridge"
+    "networkMode": "bridge",
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "512",
+    "memory": "512"
 }
